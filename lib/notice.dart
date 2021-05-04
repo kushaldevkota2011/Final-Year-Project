@@ -13,8 +13,10 @@ void main() => runApp(MaterialApp(
 class Notices {
   final int id;
   final String title;
+  // ignore: non_constant_identifier_names
   final String created_at;
 
+  // ignore: non_constant_identifier_names
   Notices({this.id, this.title, this.created_at});
 
   factory Notices.fromJson(Map<String, dynamic> json) {
@@ -68,6 +70,7 @@ class _NoticePageState extends State<NoticePage> {
     }
   }
 
+  // ignore: non_constant_identifier_names
   ListView _NoticePage(data, BuildContext context) {
     return ListView.builder(
         itemCount: data.length,
@@ -84,14 +87,6 @@ class _NoticePageState extends State<NoticePage> {
       onTap: () {
         var   route = MaterialPageRoute(builder:(BuildContext context)=> new DeveloperPage(value: index) );
         Navigator.of(context).push(route);
-        // Navigator.push(
-        //     context,
-        //     new MaterialPageRoute(
-        //         builder: (BuildContext context) => new DeveloperPage(value: index),
-        //         // settings: RouteSettings(
-        //         //   arguments: index,
-        //         //),
-        //         ),);
       },
       child: Container(
         height: 130,

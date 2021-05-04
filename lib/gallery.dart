@@ -24,13 +24,13 @@ List<ImageDetails> _images = [
   ),
   ImageDetails(
     imagePath: 'images/5.jpg',
-    title: 'External Teacher Presentation',
-    details: 'Students Gaining knowledge from external teacher',
+    title: 'Sports Week',
+    details: '016 civil vs 016 computer',
   ),
   ImageDetails(
     imagePath: 'images/6.jpg',
-    title: 'Blood Donation Program',
-    details: 'Students Donating Blood',
+    title: 'Vice Captain Shaisav Rawal',
+    details: '016 computer Winner of sports week 2021',
   ),
   ImageDetails(
     imagePath: 'images/7.jpg',

@@ -60,7 +60,7 @@ class TeacherSpage extends StatelessWidget {
 
   Future<List<Students>> _fetchStudents() async {
  final response = await http.get(Uri.parse(
-    'http://127.0.0.1:8000/api/teacher',
+    'http://192.168.254.4:9000/api/teacher',
   ));
     if (response.statusCode == 200) {
       List jsonResponse = json.decode(response.body);

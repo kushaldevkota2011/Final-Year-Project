@@ -41,6 +41,8 @@ class _NoticePageState extends State<NoticePage> {
         title: Text("Notices"),
       ),
       body: FutureBuilder<List<Notices>>(
+
+        
         future: _fetchNoticess(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
@@ -58,9 +60,8 @@ class _NoticePageState extends State<NoticePage> {
 
   Future<List<Notices>> _fetchNoticess() async {
     final response =
-        await http.get(Uri.parse('http://127.0.0.1:8000/api/notice/'));
-
-    if (response.statusCode == 200) {
+        await http.get(Uri.parse('http://127.0.0.1:8000/api/notice'));
+   if (response.statusCode == 200) {
       List jsonResponse = json.decode(response.body);
       return jsonResponse
           .map((notices) => new Notices.fromJson(notices))

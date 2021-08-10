@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project/spinkit.dart';
-// import 'package:project/main.dart';
 import 'dart:async';
 import './Student/studentInfo.dart';
 import 'dart:convert';
@@ -12,10 +11,10 @@ import 'package:http/http.dart' as http;
 
 //Map  body = {};
 Future<Notice> fetchNotice() async {
-  //final response = await http.get(Uri.https('http://127.0.0.1:8000','/api/notice/8'));
+  //final response = await http.get(Uri.https('http://192.168.254.6:9000','/api/notice/8'));
 
   final response = await http.get(Uri.parse(
-    'http://127.0.0.1:8000/api/student/1',
+    'http://192.168.254.4:9000/api/student/1',
   ));
   if (response.statusCode == 200) {
     print(response.body.runtimeType);
@@ -76,6 +75,8 @@ class _LoginPageState extends State<LoginPage> {
         ),
         body: Form(
           key: _formkey,
+          // ignore: deprecated_member_use
+                        autovalidate: true,
           child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
 
@@ -116,8 +117,7 @@ class _LoginPageState extends State<LoginPage> {
 
                       //TEXTFIELD EMAIL
                       TextFormField(
-                        // ignore: deprecated_member_use
-                        autovalidate: true,
+                        
                        
                         onChanged: (String value) {
                           setState(() {
@@ -157,8 +157,7 @@ class _LoginPageState extends State<LoginPage> {
 
                       //TEXTFIELD PASSWORD
                       TextFormField(
-                        // ignore: deprecated_member_use
-                        autovalidate: true,
+                        
                           
                         onChanged: (String value) {
                           setState(() {
@@ -224,10 +223,12 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                           onPressed: () {
+                            
                             print(StudentInfo.body['email']);
                             print(StudentInfo.body['password']);
                             print(email);
                             print(password);
+                            
                             if (email == StudentInfo.body['email'] &&
                                 password == StudentInfo.body['password']) {
                               Navigator.pushReplacement(

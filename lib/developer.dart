@@ -60,7 +60,8 @@ class _DeveloperPageState extends State<DeveloperPage> {
                 Text(
                   '${data[widget.value].title}',
                   style: new TextStyle(
-                      fontSize: 30.0,
+                      fontSize: 25.0,
+                    
                       fontWeight: FontWeight.bold,
                       foreground: Paint()..shader = linearGradient),
                 ),
@@ -90,7 +91,7 @@ class _DeveloperPageState extends State<DeveloperPage> {
 
 Future<List<Notices>> _fetchNoticess() async {
   final response =
-      await http.get(Uri.parse('http://127.0.0.1:8000/api/notice/'));
+      await http.get(Uri.parse('http://192.168.254.6:9000/api/notice/'));
 
   //print(response.statusCode);
 
